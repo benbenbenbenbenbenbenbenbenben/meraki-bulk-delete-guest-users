@@ -7,7 +7,7 @@ Python script designed for removing bulk Cisco Meraki guest users. You can add d
 ## Installation
 
 ### Prerequisites
-- Python 3.6+
+- Python 3.8+
 - Cisco Meraki Dashboard with an API key.
 
 ### Setup
@@ -46,6 +46,8 @@ Python script designed for removing bulk Cisco Meraki guest users. You can add d
     ]
 
     older_than_days = 30
+
+    simulate_api_calls = False
     ```
 
 6.  REQUIRED! Must edit the `deleteNetworkMerakiAuthUser` from the Python SDK (hopefully this will be resolved in the future). 
@@ -92,6 +94,7 @@ export MERAKI_DASHBOARD_API_KEY='your_api_key_here'
 ```
 
 ## Features
+- Create test users by using the function: `create_test_user(email, networkId)`.
 - Retrieve and list organizations and networks associated with the Meraki API key.
 - Interactive selection of organizations and networks for further actions.
 - Filtering guest users based on account type, domain, and account creation date.
